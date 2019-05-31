@@ -116,7 +116,7 @@ angular.module('bulibUnpaywall', [])
     template: '\
       <unpaywall ng-if="$ctrl.show">\
         <div layout="flex" ng-if="$ctrl.best_oa_link" class="layout-row" style="margin-top: 5px;">\
-          <a ng-click="$ctrl.trackLinkClick($ctrl.doi)" target="_blank" href="{{$ctrl.best_oa_link}}" rel="noreferrer">\
+          <a ng-click="$ctrl.trackLinkClick($ctrl.doi)" target="_blank" href="{{$ctrl.best_oa_link}}" rel="noreferrer" style="margin-left: -3px">\
             <prm-icon icon-type="svg" svg-icon-set="primo-ui" icon-definition="open-access" class="open-access-mark-icon"></prm-icon>\
             View Open Access Version\
             <span ng-if="$ctrl.showVersionLabel && $ctrl.best_oa_version">&nbsp({{$ctrl.best_oa_version}} version)</span>\
