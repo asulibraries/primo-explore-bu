@@ -16,20 +16,20 @@ Add 'Open Access available via unpaywall' link to `search-result-avaliability-li
 
 #### Purpose
 - We created this add-on to  **increase open access** to online records for our patrons.
-- This helps to increase overall access to our user whether or not they're logged in or we subscribe to the content in the results 
+- This helps to increase overall access to our user whether or not they're logged in or we subscribe to the content in the results
   (e.g. "Primo Central Index - Include Results with no full-text")
 - At BU, this results in around 50,000 additional open access links a week added exclusively to items that are not marked as `oa`
 
 #### `unpaywall` API usage
-- This functionality is made possible by a call to [unpaywall.org](https://unpaywall.org/)'s API 
+- This functionality is made possible by a call to [unpaywall.org](https://unpaywall.org/)'s API
   (e.g. [`https://api.oadoi.org/v2/{doi}?email={email}"`](https://api.unpaywall.org/v2/10.1038/nature12373?email=YOUR_EMAIL)).
-- Its [rate limits](https://unpaywall.org/products/api) are extremely leniant (100,000 calls a day), and we never hit them 
+- Its [rate limits](https://unpaywall.org/products/api) are extremely leniant (100,000 calls a day), and we never hit them
   (we do around half of that), but your mileage may vary (depending on how many of your results have DOIs [see 'How it Works' below]).
 - If you _do_ hit the limit, set `showOnResultsPage` to `false`. [see 'Additional Customization']
 - _note: this project is in no way sponsored by or affiliated with the unpaywall organization_
 
 #### `primo-explore-oadoi-link`
-- This customization was inspired by and originally developed on top of [`alliance-pcsg`](https://github.com/alliance-pcsg/)'s 
+- This customization was inspired by and originally developed on top of [`alliance-pcsg`](https://github.com/alliance-pcsg/)'s
   [`primo-explore-oadoi-link`](https://github.com/alliance-pcsg/primo-explore-oadoi-link/) customization, and owes very
   much to their great work.
 - While we did seek to recontribute our changes to that repository (and not create our own 'fork' of it) and did
@@ -78,13 +78,13 @@ and add the contents of this repository (at that npm version) into a `node_modul
 #### Installing/Importing it
 
 from here you'll have to edit your `main.js` (or `config.module.js`) file to import the package, and
-  add `bulibUnpaywall` to the dependencies inside of your 'viewCustom' module. 
+  add `bulibUnpaywall` to the dependencies inside of your 'viewCustom' module.
 
 ```js
 import 'primo-explore-unpaywall';
 angular.module('viewCustom', ['angularLoad', 'bulibUnpaywall']);
 ```
-  
+
 to protect against the situation in which you already have a component for `prmSearchResultAvailabilityLineAfter`,
   you'll also have to add a `<bulib-unpaywall></bulib-unpaywall>` component as such:
 
